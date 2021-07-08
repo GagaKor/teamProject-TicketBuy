@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="com/mybatis/db.properties"/>
+	<settings>
+		<setting name="cacheEnabled" value="false"/>
+		<setting name="useGeneratedKeys" value="ture"/>
+		<setting name="lazyLoadingEnabled" value="true"/> 
+		<setting name="defaultExecutorType" value="BATCH"/>
+		<setting name="defaultStatementTimeout" value="3000"/>
+	</settings>
+	
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>  
+                <property name="poolMaximumActiveConnections" value="100"/>
+                <property name="poolMaximumIdleConnections" value="100"/>
+                <property name="poolTimeToWait" value="20000"/>
+          </dataSource>
+        </environment>
+    </environments>
+   
+    <mappers>
+        <mapper resource ="com/mybatis/perform.xml"/>  
+        <mapper resource ="com/mybatis/place.xml"/>  
+        <mapper resource ="com/mybatis/seat.xml"/>  
+        <mapper resource ="com/mybatis/sch.xml"/>  
+        <mapper resource ="com/mybatis/actor.xml"/>  
+        <mapper resource ="com/mybatis/ticket.xml"/>
+        <mapper resource ="com/mybatis/member.xml"/>
+        <mapper resource ="com/mybatis/reservation.xml"/>
+    </mappers>
+</configuration>

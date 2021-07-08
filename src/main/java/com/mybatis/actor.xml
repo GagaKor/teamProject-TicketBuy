@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="actor"> <!-- namespace : 일종의 식별역할의 변수 -->
+
+	<select id="getActorList" parameterType="int"
+		resultType="com.vo.Actor">
+		SELECT * FROM actor WHERE performId =#{performId}
+
+	</select>
+
+	<insert id="insertActor" parameterType="com.vo.Actor">
+		INSERT INTO actor(performId, name, part, actorCode) VALUES(#{performId},#{name},#{part},#{actorCode})
+	</insert>
+	
+	<update id="updateActor" parameterType="com.vo.Actor">
+	UPDATE actor SET name = #{name}, part = #{part}, actorCode = #{actorCode} WHERE actorId = #{actorId}
+	</update>
+	
+	<delete id="deleteActor" parameterType="int">
+	Delete FROM actor WHERE actorId = #{actorId}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+

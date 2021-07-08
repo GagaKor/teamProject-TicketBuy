@@ -1,0 +1,287 @@
+@charset "UTF-8";
+
+html, body {
+	overflow-x: hidden;
+}
+/* 메뉴 박스 */
+
+/* 노말 */
+body, ul, li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* 라이브러리 */
+.inline-grid {
+	font-size: 0;
+}
+
+.inline-grid>* {
+	font-size: 1rem;
+	display: inline-block;
+	box-sizing: border-box;
+	vertical-align: top;
+}
+
+.border-red {
+	border: 10px solid red;
+}
+
+.border-blue {
+	border: 10px solid blue;
+}
+
+.border-gold {
+	border: 10px solid gold;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.block {
+	display: block;
+}
+
+.con {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* 커스텀 */
+.con {
+	width: 1440px;
+}
+
+.top-bar {
+	background-color: #232323;
+	color: white;
+}
+
+.top-bar>.con>div:first-child {
+	width: 600px;
+}
+
+.top-bar>.con>div:nth-child(2) {
+	width: 240;
+}
+
+.top-bar>.con>div:last-child {
+	width: 600px;
+}
+
+.top-bar__logo {
+	font-weight: bold;
+	font-size: 1.3rem;
+	padding: 20px;
+}
+
+.top-bar__menu-box-1>ul>li {
+	font-size: 1.05rem;
+	position: relative;
+}
+
+/* 모든 메뉴 아이템 텍스트 */
+.top-bar__menu-box-1 ul>li>a {
+	display: block;
+	white-space: nowrap;
+}
+
+/* 1차 메뉴 아이템 텍스트 */
+.top-bar__menu-box-1>ul>li>a {
+	padding: 22.5px 30px;
+}
+
+/* 서브 메뉴 아이템 텍스트 */
+.top-bar__menu-box-1>ul ul>li>a {
+	padding: 22.5px 0;
+	text-align: center;
+}
+
+.top-bar__menu-box-1 ul>li:hover>a {
+	background-color: white;
+	color: #232323;
+}
+
+.top-bar__menu-box-1>ul>li>ul {
+	display: none;
+	position: absolute;
+	background-color: #232323;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.top-bar__menu-box-1>ul>li:hover>ul {
+	display: block;
+}
+
+/* 리스트 */
+.img-box {
+	margin: 5px;
+}
+
+.img-box>img {
+	/* 이미지 주변에 쓸떼없이 생기는 여백이 사라진다. 즉 글자로서의 특징이 사라진다. */
+	display: block;
+	/* 이걸 해줘야 이미지 너비가 유연해집니다. */
+	width: 100%;
+}
+
+.cell {
+	float: left;
+	box-sizing: border-box;
+}
+
+/* .row가 float 요소들의 부모이기 때문에 아래와 같이 처리해 주지 않으면 높이가 0이 될 수 있습니다. */
+.row::after {
+	/* 막내를 추가하고, 참고로 막내는 float 요소가 아닙니다. */
+	content: "";
+	/* 아래 2개의 속석은 추가된 막내를 형들(float 요소들) 밑에 깔리게 합니다. */
+	display: block;
+	clear: both;
+}
+
+.list1 .cell {
+	width: 20%;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+.list1 .cell:hover>.product-name {
+	text-decoration: underline;
+}
+
+.list1 .cell>.product-name {
+	font-weight: bold;
+	margin-top: 10px;
+	text-align: center;
+}
+
+/* 이렇게 하면 오직 .row 만 너비가 늘어난다. */
+.list1 .row {
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+@media ( max-width :1000px ) {
+	.list1 .cell {
+		width: 33.3333%;
+	}
+}
+
+@media ( max-width :850px ) {
+	.list1 .cell {
+		width: 50%;
+	}
+}
+
+@media ( max-width :650px ) {
+	.list1 .cell {
+		width: 100%;
+	}
+}
+
+.copy {
+	margin-top: 50px;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+/*메인*/
+.maintop_new ul:after {
+	display: block;
+	clear: both;
+	content: '';
+}
+
+.maintop_new {
+	position: relative;
+	width: 1440px;
+	margin-top: 50px;
+	margin-left: 15%;
+	margin-right: 10%;
+}
+
+.mainbot_new {
+	position: relative;
+	width: 1440px;
+	margin-top: 50px;
+	margin-left: 15%;
+	margin-right: 10%;
+}
+
+.maintop_new .maintop_left {
+	float: left;
+	width: 572px;
+	border: 1px solid #d5d5d5;
+}
+
+.maintop_new .maintop_right {
+	overflow: hidden;
+	width: 572px;
+	border: 1px solid #d5d5d5;
+}
+
+.mainbot_new .mainbot_left {
+	float: left;
+	width: 572px;
+	border: 1px solid #d5d5d5;
+}
+
+.mainbot_new .mainbot_right {
+	overflow: hidden;
+	width: 572px;
+	border: 1px solid #d5d5d5;
+}
+
+.maintop_new .header {
+	height: 43px;
+	overflow: hidden
+}
+
+.maintop_new .header a.more {
+	background-position: -341px -167px;
+	width: 20px;
+	height: 20px;
+	margin-left: 8px;
+	*float: left
+}
+
+.maintop_new .maintop_cont li a:hover {
+	text-decoration: underline
+}
+
+.mainbot_new .header {
+	height: 43px;
+	overflow: hidden
+}
+
+.mainbot_new .header a.more {
+	background-position: -341px -167px;
+	width: 20px;
+	height: 20px;
+	margin-left: 8px;
+	*float: left
+}
+
+.mainbot_new .mainbot_cont li a:hover {
+	text-decoration: underline
+}

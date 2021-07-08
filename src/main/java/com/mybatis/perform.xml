@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="perform"> <!-- namespace : 일종의 식별역할의 변수 -->
+
+	<select id="getPerformAllList" resultType="com.vo.Perform">
+		SELECT * FROM perform
+	</select>
+
+	<select id="getPerformCategoryList" parameterType="int"
+		resultType="com.vo.Perform">
+		SELECT * FROM perform p WHERE categoryCode =
+		#{categoryCode}
+	</select>
+
+	<select id="getPerformOne" parameterType="int"
+		resultType="com.vo.Perform">
+		SELECT * FROM perform p WHERE performId = #{performId};
+	</select>
+
+	<select id="getMaxPerformId" resultType="int">
+		select max(performId)
+		from perform;
+	</select>
+	
+	<select id="getNewest" resultType="com.vo.Perform">
+	select * from perform order by performId desc limit 5
+	</select>
+	
+	<select id="getCategoryName" resultType="String"
+		parameterType="int">
+		SELECT
+		(CASE WHEN categoryCode = 0 THEN '연극'
+		WHEN
+		categoryCode = 1 THEN '뮤지컬'
+		WHEN categoryCode = 2 THEN '콘서트'
+		END)AS
+		categoryCode
+		FROM perform WHERE performId = #{performId}
+	</select>
+
+	<insert id="insertPerform" parameterType="com.vo.Perform">
+		INSERT INTO
+		perform(categoryCode,performName,performDetail,performImg,detailImg,runTime)
+		VALUES(#{categoryCode},#{performName},#{performDetail},#{performImg},#{detailImg},#{runTime});
+	</insert>
+
+	<update id="updatePerform" parameterType="com.vo.Perform">
+		UPDATE perform SET
+		categoryCode = #{categoryCode}, performName = #{performName},
+		performDetail =
+		#{performDetail}, performImg = #{performImg}, detailImg
+		=
+		#{detailImg}, runTime = #{runTime}
+		WHERE performId = #{performId}
+	</update>
+
+	<delete id="deletePerform" parameterType="int">
+		DELETE FROM perform
+		WHERE performId = #{performId}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+

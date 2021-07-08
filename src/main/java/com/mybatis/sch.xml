@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sch"> <!-- namespace : 일종의 식별역할의 변수 -->
+
+	<insert id="insertSch" parameterType="com.vo.Sch">
+		INSERT INTO sch(schDate, performId,placeId,startDate,endDate) VALUES(#{schDate},#{performId},#{placeId},#{startDate},#{endDate})
+	</insert>
+
+	<select id="getMaxSchId" resultType="int" parameterType="int">
+	SELECT MAX(schId) FROM sch WHERE performId = #{performId}
+	</select>
+	
+	<select id="getSeasonTime" parameterType="int" resultType="String">
+	SELECT CONCAT(startDate,'~',endDate) FROM sch WHERE performId = #{performId} group by startDate , endDate order by schDate
+	</select>
+	
+	<select id="getSearchSchList" parameterType="int" resultType="com.vo.Sch">
+	SELECT * FROM sch WHERE performId = #{performId} ORDER BY schDate
+	</select>
+	
+	<select id="getSchOne" parameterType="int" resultType="com.vo.Sch">
+	SELECT * FROM sch WHERE schId = #{schId} ORDER BY schDate
+	</select>
+	
+	<select id="getschTimeList" parameterType="int" resultType="Date">
+	SELECT DISTINCT TIME(schDate) FROM  sch s WHERE performId =#{performId}
+	</select>
+	
+	
+	<select id="getPlaceId" parameterType="int" resultType="int">
+	SELECT placeId FROM sch WHERE performId =#{performId} group by placeId;
+	</select>
+	
+	<delete id="deleteSch" parameterType="int">
+	DELETE FROM sch WHERE schId = #{schId};
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+

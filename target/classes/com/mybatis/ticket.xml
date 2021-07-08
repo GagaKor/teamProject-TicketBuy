@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ticket"> <!-- namespace : 일종의 식별역할의 변수 -->
+
+	<select id="getTicketPrice" parameterType="int" resultType="int">
+	SELECT ticketPrice FROM ticket WHERE schId = #{schId} GROUP BY ticketPrice
+	</select>
+
+	<insert id="insertTicket" parameterType="com.vo.Ticket">
+		INSERT INTO ticket(schId, placeId,seatId,ticketPrice) 
+		VALUES(#{schId},#{placeId},#{seatId},#{ticketPrice})
+	</insert>
+	
+	<select id="getTicketId" parameterType="int" resultType="int">
+	SELECT ticketId FROM ticket WHERE seatId = #{seatId};
+	</select>
+
+	<select id="getTicketOne" parameterType="int" resultType="com.vo.Ticket">
+	SELECT * FROM ticket WHERE ticketId = #{ticketId}
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+

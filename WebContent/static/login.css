@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+.btn {
+	padding: 0.7em 1.5em;
+	border: 1px solid #aaa;
+	border-radius: 4px;
+	background: linear-gradient(#fff, #ddd);
+	color: black;
+	font-family: 굴림체;
+	font-size: 10pt;
+	line-height: 1em;
+	text-decoration: none;
+	cursor: pointer;
+	display: inline-block;
+	margin: 10px;
+}
+
+input[type=text], input[type=date], input[type=time] {
+	padding: 5px;
+}
+
+input[type=number], input[type=email], input[type=password] {
+	padding: 5px;
+}
+
+.btn:active {
+	-ms-transform: translateY(2px);
+	-webkit-transform: translateY(2px);
+	transform: translateY(2px);
+	background: #ccc;
+}
+
+.shadow {
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4), 2px 2px 4px
+		rgba(0, 0, 0, 0.4);
+}
+
+.login_box{
+	border: 1px solid white;
+	padding: 1px;
+}
+
+div.login_con {
+	color: white;
+	background-color: black;
+	width: 400px; margin : 20px auto;
+	font-size: 11pt;
+	margin: 20px auto;
+}
+.btn_s {
+   padding: 0.7em 1.5em;
+   border: 1px solid #aaa;
+   border-radius: 4px;
+   background: linear-gradient(#fff, #ddd);
+   color: black;
+   font-family: 굴림체;
+   font-size: 10pt;
+   line-height: 1em;
+   text-decoration: none;
+   cursor: pointer;
+   display: inline-block;
+   margin: 10px;
+   width: 90px;
+}
+div.login_con_j {
+   color: white;
+   background-color: black;
+   width: 450px; margin : 20px auto;
+   font-size: 11pt;
+   margin: 20px auto;
+}

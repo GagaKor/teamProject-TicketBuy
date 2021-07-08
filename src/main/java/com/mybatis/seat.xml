@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="seat"> <!-- namespace : 일종의 식별역할의 변수 -->
+
+	<select id="getCount" resultType="int" parameterType="int"> <!-- id : 식별역할의 변수 -->
+		select count(*) from `place`
+	</select>
+
+	<select id="getSeatList" parameterType="int"
+		resultType="com.vo.Seat">
+		SELECT * FROM seat WHERE schId =#{schId}
+	</select>
+	<select id="getRemainSeatList" parameterType="int"
+		resultType="com.vo.Seat">
+		SELECT * FROM seat WHERE schId =#{schId} AND issue=0
+	</select>
+
+	<select id="getSeatOne" parameterType="int"
+		resultType="com.vo.Seat">
+		SELECT * FROM seat WHERE schId =#{schId}
+	</select>
+
+	<select id="getRemainSeat" parameterType="int" resultType="int">
+		SELECT COUNT(issue) FROM seat WHERE schId = #{schId} AND issue = 0
+	</select>
+
+	<insert id="insertSeat" parameterType="com.vo.Seat">
+		INSERT INTO seat(seatName,
+		placeId,schId) VALUES(#{seatName},#{placeId},#{schId})
+	</insert>
+	
+	<update id="updateIssue" parameterType="int">
+	UPDATE seat SET issue = 1 WHERE seatId = #{seaId}
+	</update>
+
+</mapper>
+
+
+
+
+
+
+
+

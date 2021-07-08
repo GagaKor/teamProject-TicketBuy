@@ -1,0 +1,124 @@
+@charset "UTF-8";
+/*폰트 적용시작*/
+@font-face {
+    font-family: '양진체';
+    src: url('https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+ html{
+ 	font-family: '양진체', sans-serif;
+ }
+/*폰트 적용끝*/
+
+
+body{
+	margin : auto;
+	padding : 0;
+	list-style: none;
+}
+ul li{
+	list-style-type: none; float: left; margin-left: 10px;
+	font-size: 35px; 
+	margin : 0;
+	padding : 0;
+}
+a{
+	color: inherit;
+	text-decoration: none;
+	margin-left: 10px;	
+}
+h1{
+	text-align: center;
+}
+
+:root{ 
+	--site-width:1200px;
+}
+.con-min-width{
+	min-width:  320px;
+}
+.con{
+	max-width: var(--site-width);
+	margin:auto; 
+}
+
+.right-box{
+	float: right;
+}
+.menu{
+	display: inline;
+	margin-left : 5em; 
+}
+.smenu{
+	font-size:15pt;
+	margin-left : 5em; 
+}
+
+.list_thumnail {
+	padding-bottom: 10px;
+	border: none;
+}
+
+.list_thumnail img {
+	width: 250px;
+	height: 300px;
+	object-fit: cover;
+	margin-bottom: 10px;
+}
+
+.list_container {
+	width: 100%;
+	height: auto;
+	float: left;
+	border: none;
+}
+.detail_box_top{min-height:530px;padding:36px 29px 30px;margin-bottom:10px;border:1px solid #dedede;border-radius:2px;background:#fff;*zoom:1}
+.detail_box_top:after{display:block;clear:both;content:''}
+.detail_box_top span.num{font-family:Montserrat-R;font-weight:bold;color:#339e00}
+.detail_box_top .detail_info{float:left;position:relative;width:675px;min-height:382px;margin-top:30px;padding:0 30px 0 342px;box-sizing:border-box}
+.detail_box_top .detail_info .bx_thumb{position:absolute;top:0;left:0}
+.detail_box_top .detail_info .bx_thumb .bx_img{display:block}
+.detail_box_top .etc_info{padding-top:7px; width: 500px;}
+.detail_box_top .etc_info .bx_dummy{position:relative;margin-top:9px}
+.detail_box_top .etc_info .bx_dummy:first-child{margin-top:0}
+.detail_box_top .etc_info .bx_dummy.border_type{margin-bottom:17px;padding-bottom:13px;border-bottom:1px dotted #9d9d9d}
+.detail_box_top .etc_info .bx_dummy.border_type:last-of-type{border:0}
+.detail_box_top .etc_info .bx_dummy.include_layer{margin-bottom:17px}
+.detail_box_top .etc_info .bx_dummy.border_type.include_layer{padding-bottom:20px}
+.detail_box_top .etc_info .info_tit{position:absolute;top:0;left:0;bottom:0;width:68px;font-weight:bold;line-height:22px}
+.detail_box_top .etc_info .lst_dsc li + li{margin-top:2px}
+.detail_box_top .etc_info .txt{display:block;min-height:20px;padding-left:68px;line-height:22px}
+.detail_box_top .etc_info .ly_btn{display:inline-block;min-width:105px;height:28px;margin-top:6px;padding:0 20px 0 7px;border:1px solid #d4d4d4;box-sizing:border-box;font-size:12px;line-height:28px;letter-spacing:-1px}
+
+
+.thumnail {
+	padding-bottom: 10px;
+	border: none;
+}
+
+.thumnailp img {
+	width: 400px;
+	height: 500px;
+	object-fit: cover;
+	margin-bottom: 10px;
+}
+
+.thumnaild img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	margin-bottom: 10px;
+	margin: auto;
+}
+
+.container {
+	width: 50%;
+	height: auto;
+	float: left;
+	border: none;
+}
+.etc_info{
+	padding-top:7px
+	}

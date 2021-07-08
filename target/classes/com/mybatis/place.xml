@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="place"> <!-- namespace : 일종의 식별역할의 변수 -->
+
+	<select id="getCount" resultType="int" parameterType="int"> <!-- id : 식별역할의 변수 -->
+		select count(*) from `place`
+	</select>
+
+	<select id="getPlaceaddrList" parameterType="String" resultType="com.vo.Place">
+		SELECT * FROM place WHERE CONCAT(placeName, placeaddr) LIKE concat('%',#{keyword},'%')
+	</select>
+	
+	<select id="getPlaceOne" parameterType="int" resultType="com.vo.Place">
+		SELECT * FROM place WHERE placeId = #{placeId}
+	</select>
+	
+	<insert id="insertPlace" parameterType="com.vo.Place">
+		INSERT INTO `place`(placeName,placeaddr,phonNum,totalSeatNum,placeRow,placeCol) values(#{placeName},#{placeaddr},#{phonNum},#{totalSeatNum},#{placeRow},#{placeCol})
+	</insert>
+
+</mapper>
+
+
+
+
+
+
+
+
